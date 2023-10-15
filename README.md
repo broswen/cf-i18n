@@ -2,7 +2,7 @@
 ```bash
 ~ curl http://localhost:8787
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <meta charset="UTF-8">
 <title>I18n</title>
 <body>
@@ -19,7 +19,7 @@
 ```bash
 ~ curl http://localhost:8787 -H 'Accept-Language: es-es'
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-es">
 <meta charset="UTF-8">
 <title>I18n</title>
 <body>
@@ -37,7 +37,7 @@
 ```bash
 ~ curl http://localhost:8787 -H 'Accept-Language: unknown'
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <meta charset="UTF-8">
 <title>I18n</title>
 <body>

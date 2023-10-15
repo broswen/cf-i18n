@@ -58,7 +58,9 @@ export default {
 			}
 		});
     // create i18n rewriter with translation context
-		const rewriter = new HTMLRewriter().on("*[i18n]", new I18nRewriter(TRANSLATION_MAP[acceptLanguage]))
+		const rewriter = new HTMLRewriter()
+			.on("*[i18n]", new I18nRewriter(acceptLanguage, TRANSLATION_MAP))
+			.on("html[lang]", new I18nRewriter(acceptLanguage, TRANSLATION_MAP))
 
 		// return the response while transforming the content
 		return rewriter.transform(res)

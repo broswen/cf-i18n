@@ -8,12 +8,21 @@ export interface TranslationMap {
 }
 
 export class I18nRewriter implements HTMLRewriterElementContentHandlers {
+	translationMap: TranslationMap
 	context: TranslationContext | undefined
-	constructor(context: TranslationContext | undefined) {
-		this.context = context
+	language: string
+	constructor(language: string, translationMap: TranslationMap) {
+		this.language = language;
+		this.translationMap = translationMap;
+		this.context = translationMap[language];
 	}
 
 	element(element: Element): void | Promise<void> {
+		// handle the <html lang="en"> attribute
+		if (element.tagName === "html" && element.getAttribute("lang") !== null && this.context) {
+			element.setAttribute("lang", this.language)
+		}
+
 		// get translation key and remove the attribute
 		const key = element.getAttribute("i18n");
 		element.removeAttribute("i18n");
