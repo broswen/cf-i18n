@@ -14,11 +14,12 @@ export class I18nRewriter implements HTMLRewriterElementContentHandlers {
 	}
 
 	element(element: Element): void | Promise<void> {
-		if (!this.context) return;
-
 		// get translation key and remove the attribute
 		const key = element.getAttribute("i18n");
 		element.removeAttribute("i18n");
+
+		// skip if context for the language code is undefined
+		if (!this.context) return;
 
 		// skip element if attribute value doesn't exist for some reason
 		if (!key) return;

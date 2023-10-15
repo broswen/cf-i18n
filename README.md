@@ -1,6 +1,6 @@
 ### Examples
 ```bash
-~ curl http://localhost:8787                                                                                  default
+~ curl http://localhost:8787
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
@@ -17,7 +17,7 @@
 </html>
 ```
 ```bash
-~ curl http://localhost:8787 -H 'Accept-Language: es-es'                                                      default
+~ curl http://localhost:8787 -H 'Accept-Language: es-es'
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
@@ -35,18 +35,18 @@
 ```
 
 ```bash
-~ curl http://localhost:8787 -H 'Accept-Language: unknown'                             default
+~ curl http://localhost:8787 -H 'Accept-Language: unknown'
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
 <title>I18n</title>
 <body>
 
-<h1 i18n="title">This is the title</h1>
-<p i18n="title.description">This is the title</p>
-<p i18n="nokey">This is the default text</p>
-<code i18n="number">3.14</code>
-<p i18n="date">2023-10-15T12:30:00</p>
+<h1>This is the title</h1>
+<p>This is the description</p>
+<p>This is the default text</p>
+<code>3.14</code>
+<p>2023-10-15T12:30:00</p>
 
 </body>
 </html>
